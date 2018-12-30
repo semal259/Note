@@ -33,7 +33,7 @@ public class NoteData {
         this.imagePaths = imagePaths;
     }
 
-    public NoteData() {
+    public NoteData(String uid, String name, String note_content, String timeStamp, double latitude, double longitude) {
     }
 
     public NoteData(String userId, String note_name, String note_content, String note_timestamp, Double latitude, Double longitude, String noteId) {

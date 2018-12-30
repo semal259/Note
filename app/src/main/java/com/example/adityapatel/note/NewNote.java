@@ -66,7 +66,7 @@ public class NewNote extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         edName = findViewById(R.id.name);
         edNote = findViewById(R.id.note);
-        dataStore = NoteDataStoreImpl.sharedInstance();
+        dataStore = NoteDataStoreImpl.sharedInstance(getApplicationContext());
         getLocationPermission();
         //getDeviceLocation();
 

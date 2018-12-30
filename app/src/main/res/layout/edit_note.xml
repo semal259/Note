@@ -42,8 +42,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_margin="10dp"
-
-
                     android:background="@color/noteTitleBackground"
                     android:hint="  Title"
                     android:textColorHint="#002d43"
@@ -64,13 +62,6 @@
                     android:textColorHint="#37474f"
                     android:textEditPasteWindowLayout="@style/Theme.AppCompat.Light.DarkActionBar" />
 
-                <!--<ImageView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="60dp"-->
-                    <!--android:scaleType="centerCrop"-->
-                    <!--android:id="@+id/note_image" />-->
-
-
             </LinearLayout>
         </android.support.design.card.MaterialCardView>
 
@@ -85,16 +76,7 @@
                 android:layout_height="match_parent"/>
         </RelativeLayout>
 
-
-
     </LinearLayout>
 
-    <!--<ImageView-->
-        <!--android:id="@+id/note_image"-->
-        <!--android:layout_width="100dp"-->
-
-        <!--android:layout_height="100dp"-->
-        <!--app:layout_constraintBottom_toBottomOf="@id/note_background"-->
-        <!--tools:layout_editor_absoluteX="16dp" />-->
 
 </android.support.constraint.ConstraintLayout>

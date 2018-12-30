@@ -8,6 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Environment;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -76,12 +77,7 @@ public class NoteDataStoreImpl implements NoteDataStore {
         user = null;
         sInstance = null;
     }
-    public void clear() {
-        mDatabase_post = null;
-        mDatabase_get = null;
-        user = null;
-        sInstance = null;
-    }
+
 
     private void init() {
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -107,32 +103,50 @@ public class NoteDataStoreImpl implements NoteDataStore {
         ChildEventListener childEventListener = new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
-                Log.d(TAG, "onChildAdded:" + dataSnapshot.getKey());
-                NoteData note = dataSnapshot.getValue(NoteData.class);
-                dataList.add(note);
+                Log.d( TAG, "onChildAdded:" + dataSnapshot.getKey() );
+                NoteData note = dataSnapshot.getValue( NoteData.class );
+                dataList.add( note );
                 try {
-                    downloadImage(note);
+                    downloadImage( note );
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
                 for (Consumer subject : consumers) {
-                    subject.consume(dataList);
+                    subject.consume( dataList );
                 }
 
             }
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String previousChildName) {
-                Log.d(TAG, "onChildChanged:" + dataSnapshot.getKey());
-                NoteData note = dataSnapshot.getValue(NoteData.class);
-                int index = getNoteIndex(note.getNoteId());
-                dataList.remove(index);
-                dataList.add(index, note);
+                Log.d( TAG, "onChildChanged:" + dataSnapshot.getKey() );
+                NoteData note = dataSnapshot.getValue( NoteData.class );
+                int index = getNoteIndex( note.getNoteId() );
+                dataList.remove( index );
+                dataList.add( index, note );
                 try {
-                    downloadImage(note);
+                    downloadImage( note );
                 } catch (IOException e) {
                     e.printStackTrace();
+                }
+            }
 
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+    }
 
     private final List<Consumer> consumers = new ArrayList<>();
     private final List<AllUserNoteConsumer> allUserNoteConsumers = new ArrayList<>();

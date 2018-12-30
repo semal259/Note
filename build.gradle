@@ -10,11 +10,8 @@ buildscript {
 
         classpath 'com.android.tools.build:gradle:3.2.1'
         //classpath 'com.google.gms:google-services:4.0.1'
-<<<<<<< HEAD
         classpath 'com.google.gms:google-services:4.2.0'
-=======
-        classpath 'com.google.gms:google-services:4.0.2'
->>>>>>> f7ea07f8ccaf619ea068cb8881acb22091e502ae
+
 
     }
 }

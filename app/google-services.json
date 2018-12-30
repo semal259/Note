@@ -1,0 +1,54 @@
+{"project_info": {
+  "project_number": "501259673819",
+  "firebase_url": "https://note-40b8e.firebaseio.com",
+  "project_id": "note-40b8e",
+  "storage_bucket": "note-40b8e.appspot.com"
+},
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501259673819:android:a013691de7a1825b",
+        "android_client_info": {
+          "package_name": "com.example.adityapatel.note"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501259673819-phunmlhm4baui9e4ups4b1m9jsgarga2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.adityapatel.note",
+            "certificate_hash": "5b63b7f86c2bd5b60be4343324ab4448e9de9224"
+          }
+        },
+        {
+          "client_id": "501259673819-hqjc0h48a9cbdmtmmiomhhs4r1hb04fo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLilxJTW_GkiRA6EOuc_O01UrXJ-o5GTo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501259673819-hqjc0h48a9cbdmtmmiomhhs4r1hb04fo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
